@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<robot name="Bridge" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find Bridge_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find Bridge_description)/urdf/Bridge.trans" />
+<xacro:include filename="$(find Bridge_description)/urdf/Bridge.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.2 0.0666666666666667 0.4875" rpy="0 0 0"/>
+    <mass value="459.225"/>
+    <inertia ixx="37.39973" iyy="45.56373" izz="10.205" ixy="1.53075" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Bridge_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Bridge_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+</robot>
